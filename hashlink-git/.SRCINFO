@@ -1,0 +1,20 @@
+pkgbase = hashlink-git-stable
+	pkgdesc = Latest release from the hashlink virtual machine
+	pkgver = 1.11
+	pkgrel = 0
+	url = https://hashlink.haxe.org/
+	arch = any
+	license = MIT
+	depends = libpng
+	depends = libjpeg-turbo
+	depends = libvorbis
+	depends = openal
+	depends = sdl2
+	depends = mbedtls
+	depends = libuv
+	provides = hashlink
+	source = git+https://github.com/HaxeFoundation/hashlink.git
+	md5sums = SKIP
+
+pkgname = hashlink-git-stable
+

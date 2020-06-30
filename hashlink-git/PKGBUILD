@@ -1,0 +1,29 @@
+# Maintainer: Pietro Carrara <pbcarrara@inf.ufrgs.br>
+
+pkgname=hashlink-git-stable
+pkgver=1.11
+pkgrel=0
+pkgdesc='Latest release from the hashlink virtual machine'
+arch=('any')
+url='https://hashlink.haxe.org/'
+license=('MIT')
+depends=('libpng' 'libjpeg-turbo' 'libvorbis' 'openal' 'sdl2' 'mbedtls' 'libuv')
+provides=('hashlink')
+source=('git+https://github.com/HaxeFoundation/hashlink.git')
+md5sums=('SKIP')
+
+prepare() {
+	cd hashlink
+	git checkout "$pkgver"
+}
+
+build() {
+	cd hashlink
+	make
+}
+
+package() {
+	cd hashlink
+	printenv
+	make install PREFIX="$pkgdir/usr"
+}
